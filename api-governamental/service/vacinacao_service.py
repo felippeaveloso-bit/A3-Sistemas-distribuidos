@@ -41,6 +41,7 @@ def receber_vacinacao(db: Session, data: VacinacaoIn, idempotency_key: str):
         fabricante=data.fabricante,
         numero_lote=data.numero_lote,
         veterinario_responsavel=data.veterinario_responsavel,
+        cpf_veterinario=data.cpf_veterinario,
         idempotency_key=idempotency_key
     )
 
@@ -86,6 +87,7 @@ def consultar_operacao(db: Session, protocolo: str):
         "numero_lote": obj.numero_lote,
         "data_aplicacao": obj.data_aplicacao,
         "veterinario_responsavel": obj.veterinario_responsavel,
+        "cpf_veterinario": obj.cpf_veterinario,
         "recebidoEm": obj.recebido_em
     }
 

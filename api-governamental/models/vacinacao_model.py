@@ -21,6 +21,7 @@ class VacinacaoGoverno(Base):
     fabricante: Mapped[str] = mapped_column(String(120))
     numero_lote: Mapped[str] = mapped_column(String(80))
     veterinario_responsavel: Mapped[str] = mapped_column(String(150))
+    cpf_veterinario: Mapped[str] = mapped_column(String(20))
 
     idempotency_key: Mapped[str] = mapped_column(String(150), nullable=False)
     recebido_em: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

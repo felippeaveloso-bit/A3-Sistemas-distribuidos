@@ -33,5 +33,6 @@ public interface GovernoMapper {
     @Mapping(target = "fabricante", source = "vacina.fabricante")
     @Mapping(target = "numeroLote", source = "vacina.numeroLote")
     @Mapping(target = "veterinarioResponsavel", expression = "java(vacina.getVeterinario() != null ? vacina.getVeterinario().getNomeCompleto() + \" - CRMV \" + vacina.getVeterinario().getCrmvNumero() + \"/\" + vacina.getVeterinario().getCrmvUf() : null)")
+    @Mapping(target = "cpfVeterinario", source = "vacina.veterinario.cpf")
     GovernoVacinaRequestDto toVacinaRequestDto(Animal animal, Vacina vacina, String codigoMicrochip);
 }

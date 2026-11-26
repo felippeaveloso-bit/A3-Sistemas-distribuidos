@@ -9,3 +9,4 @@ class VacinacaoIn(BaseModel):
     fabricante: str = Field(min_length=1, max_length=100)
     numero_lote: str = Field(min_length=1, max_length=50)
     veterinario_responsavel: str = Field(min_length=1, max_length=150)
+    cpf_veterinario: str = Field(min_length=11, max_length=20)

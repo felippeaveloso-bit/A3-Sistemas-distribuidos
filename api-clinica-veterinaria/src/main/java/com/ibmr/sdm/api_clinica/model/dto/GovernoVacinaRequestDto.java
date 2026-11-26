@@ -26,7 +26,10 @@ public record GovernoVacinaRequestDto(
         String numeroLote,
 
         @JsonProperty("veterinario_responsavel")
-        String veterinarioResponsavel
+        String veterinarioResponsavel,
+
+        @JsonProperty("cpf_veterinario")
+        String cpfVeterinario
 
 ) {
 }
