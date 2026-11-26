@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="49c280f8-8426-4ffc-a97f-f0f08ee358e0" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="92412288-1c4a-46bc-969a-322e0d8bd97d" value="" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RodrigoYamaya&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RodrigoYamaya/api-clinica-veterinaria.git&quot;,
+    &quot;accountId&quot;: &quot;d2ec2c83-0057-4370-bf71-7c0d08c0380f&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000649781281947" />
+      <entry key="MS500" value="1.2068838863089932" />
+      <entry key="S2" value="2.1159642931844154" />
+      <entry key="S5" value="2.6610961637745953" />
+      <entry key="S10" value="3.6401271832855455" />
+      <entry key="S30" value="8.729365092536018" />
+      <entry key="S60" value="14.709568188715412" />
+      <entry key="M2" value="21.142615186787587" />
+      <entry key="M5" value="27.38252225503498" />
+      <entry key="M10" value="30.841018495472916" />
+      <entry key="M15" value="33.30959491326755" />
+      <entry key="M30" value="38.98856880216696" />
+      <entry key="H1" value="46.381008744884944" />
+      <entry key="H2" value="56.50772496382653" />
+      <entry key="H4" value="69.35865788273635" />
+      <entry key="D1" value="97.25930749597802" />
+      <entry key="W1" value="106.28185892423825" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.8919348547780014E-153" />
+      <entry key="S10" value="5.906940096600664E-77" />
+      <entry key="S30" value="6.122249488791743E-26" />
+      <entry key="S60" value="3.4948776902051924E-13" />
+      <entry key="M2" value="8.357915911752406E-7" />
+      <entry key="M5" value="0.00569723489912922" />
+      <entry key="M10" value="0.12958652258436437" />
+      <entry key="M15" value="0.43933359343393635" />
+      <entry key="M30" value="1.8278144340855562" />
+      <entry key="H1" value="4.3854365145249234" />
+      <entry key="H2" value="7.735008246910694" />
+      <entry key="H4" value="11.357636189771632" />
+      <entry key="D1" value="20.03115861975704" />
+      <entry key="W1" value="23.342668299155267" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="7.207683094156463E-4" />
+      <entry key="MS500" value="0.31490269664335646" />
+      <entry key="S2" value="1.560553315139516" />
+      <entry key="S5" value="2.368184935405513" />
+      <entry key="S10" value="3.4701015901463403" />
+      <entry key="S30" value="8.65235247110028" />
+      <entry key="S60" value="14.66014271186219" />
+      <entry key="M2" value="21.11179919671277" />
+      <entry key="M5" value="27.373393805036056" />
+      <entry key="M10" value="30.961795113445977" />
+      <entry key="M15" value="33.74105913890214" />
+      <entry key="M30" value="40.80734588315192" />
+      <entry key="H1" value="50.75665467010085" />
+      <entry key="H2" value="64.23398266687302" />
+      <entry key="H4" value="80.70978501285171" />
+      <entry key="D1" value="117.28871948483261" />
+      <entry key="W1" value="129.62424866136905" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3Lvf0YZFqxEqv5g2Ak0txFxEFoc" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.application.removed.from.services&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiClinicaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projeto\A3- Sistemas Distribuidos\api-clinica-veterinaria" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="A3- Sistemas Distribuidos" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
+      <module name="A3- Sistemas Distribuidos" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ApiClinicaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-clinica" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ibmr.sdm.api_clinica.ApiClinicaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
+        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-IU-263.7307.200" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49c280f8-8426-4ffc-a97f-f0f08ee358e0" name="Changes" comment="" />
+      <created>1794339244687</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1794339244687</updated>
+      <workItem from="1794339255044" duration="5326000" />
+      <workItem from="1794354292621" duration="489000" />
+      <workItem from="1794356645477" duration="6113000" />
+      <workItem from="1794513860856" duration="14550000" />
+      <workItem from="1794601289245" duration="2558000" />
+      <workItem from="1794611488658" duration="8329000" />
+      <workItem from="1794691116186" duration="1070000" />
+      <workItem from="1794697817756" duration="8405000" />
+      <workItem from="1794785552790" duration="10588000" />
+      <workItem from="1794860498037" duration="644000" />
+      <workItem from="1794869113401" duration="13132000" />
+      <workItem from="1794957785394" duration="2496000" />
+      <workItem from="1794960936588" duration="1933000" />
+      <workItem from="1795033662894" duration="6999000" />
+      <workItem from="1795136159331" duration="8665000" />
+      <workItem from="1795204613761" duration="5981000" />
+      <workItem from="1795225350633" duration="13014000" />
+      <workItem from="1795308624254" duration="606000" />
+      <workItem from="1795309751418" duration="288000" />
+      <workItem from="1795311789948" duration="6313000" />
+      <workItem from="1795374593658" duration="11477000" />
+      <workItem from="1795400189084" duration="625000" />
+      <workItem from="1795460900848" duration="879000" />
+      <workItem from="1795478522084" duration="3007000" />
+      <workItem from="1795484209356" duration="1232000" />
+      <workItem from="1795491460653" duration="1236000" />
+      <workItem from="1795557560483" duration="826000" />
+      <workItem from="1795559405998" duration="4063000" />
+      <workItem from="1795568561686" duration="1107000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

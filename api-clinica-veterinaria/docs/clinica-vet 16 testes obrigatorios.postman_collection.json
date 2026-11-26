@@ -1,0 +1,834 @@
+{
+  "info": {
+    "_postman_id": "82ab55a2-8e77-4c0d-92b3-6a810d52bcb3",
+    "name": "NexoVet - API Veterinaria & Integração Gov",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "36788265",
+    "_collection_link": "https://go.postman.co/collection/36788265-82ab55a2-8e77-4c0d-92b3-6a810d52bcb3?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1) login de veterinario ativo e com senha confirmada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"peixoto@clinica.com\",\r\n  \"senha\": \"senha0966\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/veterinarios/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "veterinarios",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3) bloqueio de veterinario com senha nao confirmada",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"itachi@hotmail.com\",\r\n  \"senha\": \"brasil321\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/veterinarios/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "veterinarios",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2) bloqueio veterinario inativo",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nomeCompleto\": \"Dr madara\",\r\n    \"cpf\": \"88017164009\",\r\n    \"crmvNumero\": \"3218\",\r\n    \"crmvUf\": \"RJ\",\r\n    \"email\": \"madara@hotmail.com\",\r\n    \"telefone\": \"2188672520\",\r\n    \"situacao\": \"INATIVO\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/veterinarios/17",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "veterinarios",
+            "17"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4) rejeiçaõ de senha incorreta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"mariana.costa@nexovet.com\",\r\n  \"senha\": \"Senha@123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/veterinarios/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "veterinarios",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5) tutor com cpf duplicado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nomeCompleto\": \"João Silva Duplicado\",\r\n  \"cpf\": \"18291785201\",\r\n  \"dataNascimento\": \"1985-10-20\",\r\n  \"email\": \"joao.duplicado@email.com\",\r\n  \"telefone\": \"21988887777\",\r\n  \"enderecoId\": 29\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/tutores",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "tutores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5a) cadastrar um tutor",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nomeCompleto\": \"João Silva cardoso\",\r\n  \"cpf\": \"12345678909\",\r\n  \"dataNascimento\": \"1985-10-20\",\r\n  \"email\": \"joao.cardoso@email.com\",\r\n  \"telefone\": \"21988887778\",\r\n  \"enderecoId\": 29\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/tutores",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "tutores"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6b) Tratamento de CEP inexistente",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cep\": \"99999999\",\r\n  \"numero\": \"100\",\r\n  \"complemento\": \"Casa\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/enderecos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "enderecos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6a)consulta cep valido",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cep\": \"23056000\",\r\n  \"numero\": \"5\",\r\n  \"complemento\": \"Sala 205\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/enderecos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "enderecos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7a)Cadastro de animal",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nome\": \"ANA\",\r\n  \"dataNascimento\": \"2022-04-10\",\r\n  \"sexo\": \"FEMEA\",\r\n  \"cor\": \"preto\",\r\n  \"pesoAtual\": 18.5,\r\n  \"tutorId\": 12,\r\n  \"especieId\": 2,\r\n  \"racaId\": 2\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/animais",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "animais"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7b)Vinculo do microchip",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n    \"veterinarioId\": 10,\r\n    \"codigoMicrochip\": \"985112004567880\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/animais/18/microchip",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "animais",
+            "18",
+            "microchip"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08)Rejeição de microchip já utilizado",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n    \"veterinarioId\": 10,\r\n    \"codigoMicrochip\": \"985112004567890\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/animais/18/microchip",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "animais",
+            "18",
+            "microchip"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9a) registro de consulta",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"animalId\": 17,\r\n  \"veterinarioId\": 9,\r\n  \"dataHora\": \"2026-11-22T09:30:00\",\r\n  \"motivo\": \"Check-up clínico e avaliação pré-vacinal\",\r\n  \"anamnese\": \"Animal ativo, apetite preservado e ingestão hídrica normal.\",\r\n  \"sintomas\": \"Sem alterações clínicas aparentes.\",\r\n  \"diagnostico\": \"Animal hígido, apto para protocolo vacinal.\",\r\n  \"tratamento\": \"Manter vermifugação trimestral e iniciar esquema antirrábico.\",\r\n  \"prescricao\": \"Vermífugo oral dose única conforme peso.\",\r\n  \"pesoKg\": 18.6,\r\n  \"temperaturaC\": 38.4,\r\n  \"observacoes\": \"Retorno para aplicação da vacina antirrábica.\",\r\n  \"situacao\": \"REALIZADA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/consultas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "consultas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9b) consultar historico clinico",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/animais/18/consultas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "animais",
+            "18",
+            "consultas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10a) registro vacina",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"animalId\": 18,\r\n  \"veterinarioId\": 10,\r\n  \"nomeVacina\": \"Vanguard Plus V10\",\r\n  \"tipoVacina\": \"POLIVALENTE\",\r\n  \"antirrabica\": false,\r\n  \"fabricante\": \"Zoetis\",\r\n  \"numeroLote\": \"LOT-2026-V10A\",\r\n  \"dataAplicacao\": \"2026-11-22\",\r\n  \"dose\": \"1ª Dose\",\r\n  \"viaAplicacao\": \"SUBCUTANEA\",\r\n  \"dataProximaDose\": \"2026-12-22\",\r\n  \"validadeLote\": \"2027-08-30\",\r\n  \"observacoes\": \"Reforço agendado para 30 dias.\",\r\n  \"situacao\": \"APLICADA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/vacinas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "vacinas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10b)Consulta às próximas doses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/vacinas/animal/18/proximas-doses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "vacinas",
+            "animal",
+            "18",
+            "proximas-doses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11a)Cadastro de animal na API Governamental",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"microchip\": \"985112009998877\",\r\n  \"nome\": \"Rex\",\r\n  \"especie\": \"Cão\",\r\n  \"raca\": \"Labrador\",\r\n  \"dataNascimento\": \"2023-06-15\",\r\n  \"sexo\": \"MACHO\",\r\n  \"cor\": \"Dourado\",\r\n  \"tutorNome\": \"Carlos Eduardo Mendes\",\r\n  \"cpfTutor\": \"45678912300\",\r\n  \"origem\": \"NexoVet\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/animais",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "animais"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "11b)Atualização de animal na API Governamental",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"microchip\": \"985112009998877\",\r\n  \"nome\": \"Rex Atualizado teste\",\r\n  \"especie\": \"Cão\",\r\n  \"raca\": \"Labrador Retriever\",\r\n  \"dataNascimento\": \"2023-06-15\",\r\n  \"sexo\": \"MACHO\",\r\n  \"cor\": \"Dourado\",\r\n  \"tutorNome\": \"Carlos Eduardo Mendes\",\r\n  \"cpfTutor\": \"45678912300\",\r\n  \"origem\": \"NexoVet\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/animais/985112009998877",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "animais",
+            "985112009998877"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12a)Envio obrigatório de vacina antirrábica via Clínica",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"animalId\": 18,\r\n  \"veterinarioId\": 10,\r\n  \"nomeVacina\": \"Rabisin-I\",\r\n  \"tipoVacina\": \"ANTIRRABICA\",\r\n  \"antirrabica\": true,\r\n  \"fabricante\": \"Boehringer Ingelheim\",\r\n  \"numeroLote\": \"RAB-2026-091\",\r\n  \"dataAplicacao\": \"2026-11-22\",\r\n  \"dose\": \"Dose Única\",\r\n  \"viaAplicacao\": \"SUBCUTANEA\",\r\n  \"dataProximaDose\": \"2027-11-22\",\r\n  \"validadeLote\": \"2028-05-10\",\r\n  \"observacoes\": \"Comunicação obrigatória ao órgão governamental.\",\r\n  \"situacao\": \"APLICADA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/vacinas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "vacinas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "12b)Conferência do protocolo de integração",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/vacinacoes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "vacinacoes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "13a)Registro de vacina não antirrábica na Clínica",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"animalId\": 18,\r\n  \"veterinarioId\": 10,\r\n  \"nomeVacina\": \"BronchiGuard\",\r\n  \"tipoVacina\": \"TOSSE_DOS_CANIS\",\r\n  \"antirrabica\": false,\r\n  \"fabricante\": \"Zoetis\",\r\n  \"numeroLote\": \"BRG-2026-044\",\r\n  \"dataAplicacao\": \"2026-11-22\",\r\n  \"dose\": \"Dose Única\",\r\n  \"viaAplicacao\": \"SUBCUTANEA\",\r\n  \"dataProximaDose\": \"2027-11-22\",\r\n  \"validadeLote\": \"2028-03-15\",\r\n  \"observacoes\": \"Vacina não obrigatória — não deve gerar envio governamental.\",\r\n  \"situacao\": \"APLICADA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/vacinas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "vacinas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "13b)Verificação de ausência de envio na API Governamental",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/vacinacoes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "vacinacoes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "14a)Ativar indisponibilidade na API Governamental",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"indisponivel\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/simulacao/indisponibilidade",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "simulacao",
+            "indisponibilidade"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "14b)Registro de vacina antirrábica com Gov indisponível",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"animalId\": 18,\r\n  \"veterinarioId\": 10,\r\n  \"nomeVacina\": \"Defensor\",\r\n  \"tipoVacina\": \"ANTIRRABICA\",\r\n  \"antirrabica\": true,\r\n  \"fabricante\": \"Zoetis\",\r\n  \"numeroLote\": \"DEF-2026-503\",\r\n  \"dataAplicacao\": \"2026-11-22\",\r\n  \"dose\": \"Reforço Anual\",\r\n  \"viaAplicacao\": \"SUBCUTANEA\",\r\n  \"dataProximaDose\": \"2027-11-22\",\r\n  \"validadeLote\": \"2028-06-30\",\r\n  \"observacoes\": \"Teste de resiliência durante indisponibilidade (503).\",\r\n  \"situacao\": \"APLICADA\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/vacinas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "vacinas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "14c)Conferência de integração pendente/falha",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/integracoes-governo",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "integracoes-governo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "15a)Restabelecer API Governamental",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"indisponivel\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/simulacao/indisponibilidade",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "simulacao",
+            "indisponibilidade"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "15b)Confirmação posterior da integração",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8081/api/integracoes-governo",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "integracoes-governo"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "16)Repetição da solicitação com idempotência",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Idempotency-Key",
+            "value": "b6339ba8-e567-4d0b-b757-675c32a86c61"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"codigo_microchip\": \"985112004567880\",\r\n  \"nome_animal\": \"ANA\",\r\n  \"data_aplicacao\": \"2026-11-22\",\r\n  \"nome_vacina\": \"Defensor\",\r\n  \"fabricante\": \"Zoetis\",\r\n  \"numero_lote\": \"DEF-2026-503\",\r\n  \"veterinario_responsavel\": \"Dr. lucas - CRMV 99974/RJ\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8082/api/governo/vacinacoes-antirrabicas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8082",
+          "path": [
+            "api",
+            "governo",
+            "vacinacoes-antirrabicas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2b)verificar bloqueio veterinario inativo",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"madara@hotmail.com\",\r\n  \"senha\": \"brasil123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/api/veterinarios/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "api",
+            "veterinarios",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

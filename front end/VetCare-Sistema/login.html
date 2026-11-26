@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso | NexoVet — Gestão Veterinária</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green: #176b5b; --green2: #218675; --mint: #e8f4ef; --ink: #18332e;
+            --line: #e5ece9; --bg: #f5f8f6; --shadow: 0 18px 45px rgba(24, 51, 46, .09);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; background: var(--bg); color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            min-height: 100vh; display: grid; grid-template-columns: 1.05fr 1fr;
+        }
+        .brand-side {
+            background: linear-gradient(155deg, #13584b 0%, #1d7a68 58%, #25917c 100%);
+            color: #fff; padding: 52px; display: flex; flex-direction: column;
+            justify-content: space-between; position: relative; overflow: hidden;
+        }
+        .brand-side::after {
+            content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%;
+            background: rgba(255, 255, 255, .06); right: -120px; bottom: -140px;
+        }
+        .brand-badge {
+            display: inline-flex; align-items: center; gap: 12px;
+            font: 800 22px Manrope; letter-spacing: -.02em;
+        }
+        .brand-badge span {
+            width: 44px; height: 44px; border-radius: 12px; background: rgba(255,255,255,.16);
+            display: grid; place-items: center; font-size: 24px;
+        }
+        .hero-copy { max-width: 440px; position: relative; z-index: 1; }
+        .hero-copy h2 { font: 800 34px/1.18 Manrope; margin: 0 0 14px; letter-spacing: -.02em; }
+        .hero-copy p { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.86); margin: 0 0 26px; }
+        .feature-pills { display: grid; gap: 10px; }
+        .pill {
+            background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.16);
+            padding: 11px 14px; border-radius: 10px; font-size: 13px; display: flex; align-items: center; gap: 10px;
+        }
+        .brand-foot { font-size: 12px; color: rgba(255,255,255,.72); position: relative; z-index: 1; }
+
+        .auth-side {
+            display: grid; place-items: center; padding: 28px 20px;
+        }
+        .flip-scene {
+            width: min(460px, 100%);
+            perspective: 1400px;
+        }
+        .flip-card {
+            display: grid;
+            transform-style: preserve-3d;
+            transition: transform 0.68s cubic-bezier(0.4, 0.15, 0.2, 1);
+        }
+        .flip-card.flipped {
+            transform: rotateY(180deg);
+        }
+        .flip-face {
+            grid-area: 1 / 1;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            background: #fff; border: 1px solid var(--line);
+            border-radius: 18px; padding: 34px 36px;
+            box-shadow: var(--shadow);
+        }
+        .flip-front { z-index: 2; }
+        .flip-back {
+            transform: rotateY(180deg);
+            pointer-events: none;
+        }
+        .flip-card.flipped .flip-front { pointer-events: none; }
+        .flip-card.flipped .flip-back { pointer-events: auto; }
+
+        .card-head { text-align: center; margin-bottom: 20px; }
+        .brand-mark {
+            width: 50px; height: 50px; border-radius: 14px; background: var(--green);
+            color: white; display: inline-grid; place-items: center; font-size: 28px;
+            margin-bottom: 12px;
+        }
+        h1 { font: 800 23px Manrope; margin: 0 0 4px; }
+        .subtitle { color: #71827e; font-size: 13px; margin: 0; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .field { display: flex; flex-direction: column; gap: 5px; text-align: left; margin-bottom: 13px; }
+        .field label { font-size: 11px; font-weight: 700; color: #60736d; text-transform: uppercase; letter-spacing: .03em; }
+        .field input, .field select {
+            padding: 11px 12px; border: 1px solid #dfe8e3; border-radius: 8px;
+            background: #fff; font: 14px 'DM Sans'; color: var(--ink); outline: none; width: 100%;
+        }
+        .field input:focus, .field select:focus { border-color: #74ad9e; box-shadow: 0 0 0 3px #e8f4ef; }
+
+        .btn {
+            width: 100%; border: 0; border-radius: 9px; padding: 13px;
+            font: 700 14px 'DM Sans'; cursor: pointer; background: var(--green);
+            color: white; margin-top: 6px; transition: 0.2s;
+        }
+        .btn:hover { background: #105849; transform: translateY(-1px); }
+        .btn:disabled { background: #a9c9be; cursor: not-allowed; transform: none; }
+
+        .btn-outline {
+            width: 100%; border: 1px solid #cfe0d9; border-radius: 9px; padding: 11px;
+            font: 700 13px 'DM Sans'; cursor: pointer; background: #f8fbf9;
+            color: var(--green); margin-top: 10px; transition: 0.2s;
+        }
+        .btn-outline:hover { background: var(--mint); border-color: #9ec8b9; }
+
+        .links-row {
+            display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 14px;
+        }
+        .btn-link {
+            background: none; border: 0; color: var(--green); font: 600 13px 'DM Sans';
+            cursor: pointer; text-decoration: underline; padding: 2px;
+        }
+        .btn-link:hover { color: #105849; }
+
+        .msg-box {
+            padding: 11px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 600;
+            margin-bottom: 14px; display: none; text-align: left; line-height: 1.4;
+        }
+        .msg-box.error { color: #c95b5b; background: #fff0ef; border: 1px solid #f7d4d2; }
+        .msg-box.success { color: #176b5b; background: #e8f4ef; border: 1px solid #c5e6d8; }
+        .hidden { display: none; }
+
+        @media (max-width: 900px) {
+            body { grid-template-columns: 1fr; }
+            .brand-side { display: none; }
+        }
+    </style>
+    <script>
+        if (localStorage.getItem('vetcare_user')) {
+            window.location.replace('index.html');
+        }
+    </script>
+</head>
+<body>
+
+<aside class="brand-side">
+    <div class="brand-badge"><span>✚</span> NexoVet</div>
+    <div class="hero-copy">
+        <h2>Gestão clínica conectada à rastreabilidade RFID.</h2>
+        <p>Controle completo de tutores, prontuários clínicos, esquema vacinal e comunicação obrigatória de vacinação antirrábica com o serviço governamental.</p>
+        <div class="feature-pills">
+            <div class="pill">🐾 Vínculo único de microchip RFID com histórico preservado</div>
+            <div class="pill">💉 Controle de vacinas e alertas de próximas doses</div>
+            <div class="pill">⇄ Sincronização resiliente com protocolo governamental</div>
+        </div>
+    </div>
+    <div class="brand-foot">NexoVet • Plataforma Clínica Veterinária • IBMR SDM</div>
+</aside>
+
+<main class="auth-side">
+    <div class="flip-scene">
+        <div class="flip-card" id="flipCard">
+
+            <!-- FRENTE: LOGIN & CONFIRMAÇÃO -->
+            <section class="flip-face flip-front">
+                <div class="card-head">
+                    <div class="brand-mark">✚</div>
+                    <h1 id="cardTitle">Acesso NexoVet</h1>
+                    <p class="subtitle" id="cardSubtitle">Área restrita para veterinários autorizados.</p>
+                </div>
+
+                <div id="msgBox" class="msg-box"></div>
+
+                <!-- FORMULÁRIO DE LOGIN -->
+                <form id="loginForm">
+                    <div class="field">
+                        <label>E-mail institucional</label>
+                        <input type="email" id="email" required placeholder="dr.exemplo@nexovet.com">
+                    </div>
+                    <div class="field">
+                        <label>Senha de acesso</label>
+                        <input type="password" id="senha" required placeholder="••••••••">
+                    </div>
+                    <button type="submit" class="btn" id="loginBtn">Entrar no sistema</button>
+
+                    <button type="button" class="btn-outline" id="flipToRegisterBtn">
+                        Não tem conta? Cadastrar veterinário ↻
+                    </button>
+
+                    <div class="links-row">
+                        <button type="button" class="btn-link" id="goToConfirmBtn">
+                            Primeiro acesso? Confirmar cadastro por e-mail
+                        </button>
+                    </div>
+                </form>
+
+                <!-- FORMULÁRIO DE CONFIRMAÇÃO DE SENHA -->
+                <form id="confirmForm" class="hidden">
+                    <div class="field">
+                        <label>E-mail cadastrado</label>
+                        <input type="email" id="confirmEmail" required placeholder="dr.exemplo@nexovet.com">
+                    </div>
+                    <button type="submit" class="btn" id="confirmBtn">Confirmar cadastro</button>
+
+                    <div class="links-row">
+                        <button type="button" class="btn-link" id="backToLoginBtn">
+                            ← Voltar para o login
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- VERSO: CADASTRO DE VETERINÁRIO -->
+            <section class="flip-face flip-back">
+                <div class="card-head">
+                    <div class="brand-mark">⚕</div>
+                    <h1>Novo Veterinário</h1>
+                    <p class="subtitle">Crie seu credenciamento clínico para acessar a NexoVet.</p>
+                </div>
+
+                <div id="registerMsgBox" class="msg-box"></div>
+
+                <form id="registerForm">
+                    <div class="field">
+                        <label>Nome completo *</label>
+                        <input type="text" id="regNome" required placeholder="Dr(a). Nome Sobrenome">
+                    </div>
+                    <div class="grid-2">
+                        <div class="field">
+                            <label>CPF *</label>
+                            <input type="text" id="regCpf" required maxlength="14" placeholder="000.000.000-00">
+                        </div>
+                        <div class="field">
+                            <label>Telefone</label>
+                            <input type="tel" id="regTelefone" placeholder="(21) 99999-9999">
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="field">
+                            <label>Número CRMV *</label>
+                            <input type="text" id="regCrmvNumero" required placeholder="12345">
+                        </div>
+                        <div class="field">
+                            <label>UF CRMV *</label>
+                            <select id="regCrmvUf" required>
+                                <option value="">UF...</option>
+                                <option value="AC">AC</option><option value="AL">AL</option><option value="AP">AP</option>
+                                <option value="AM">AM</option><option value="BA">BA</option><option value="CE">CE</option>
+                                <option value="DF">DF</option><option value="ES">ES</option><option value="GO">GO</option>
+                                <option value="MA">MA</option><option value="MT">MT</option><option value="MS">MS</option>
+                                <option value="MG">MG</option><option value="PA">PA</option><option value="PB">PB</option>
+                                <option value="PR">PR</option><option value="PE">PE</option><option value="PI">PI</option>
+                                <option value="RJ" selected>RJ</option><option value="RN">RN</option><option value="RS">RS</option>
+                                <option value="RO">RO</option><option value="RR">RR</option><option value="SC">SC</option>
+                                <option value="SP">SP</option><option value="SE">SE</option><option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>E-mail profissional *</label>
+                        <input type="email" id="regEmail" required placeholder="dr.exemplo@nexovet.com">
+                    </div>
+                    <div class="field">
+                        <label>Senha de acesso *</label>
+                        <input type="password" id="regSenha" required minlength="4" placeholder="Crie uma senha segura">
+                    </div>
+
+                    <button type="submit" class="btn" id="registerBtn">Concluir cadastro</button>
+
+                    <div class="links-row">
+                        <button type="button" class="btn-link" id="flipBackToLoginBtn">
+                            ↺ Já tenho cadastro — voltar para o login
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<script>
+    const API_BASE = 'http://localhost:8081';
+    const flipCard = document.getElementById('flipCard');
+    const msgBox = document.getElementById('msgBox');
+    const registerMsgBox = document.getElementById('registerMsgBox');
+    const loginForm = document.getElementById('loginForm');
+    const confirmForm = document.getElementById('confirmForm');
+    const registerForm = document.getElementById('registerForm');
+
+    function showMessage(box, text, type = 'error') {
+        box.textContent = text;
+        box.className = `msg-box ${type}`;
+        box.style.display = 'block';
+    }
+
+    function clearMessages() {
+        msgBox.style.display = 'none';
+        registerMsgBox.style.display = 'none';
+    }
+
+    function openLoginMode() {
+        confirmForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+        document.getElementById('cardTitle').textContent = 'Acesso NexoVet';
+        document.getElementById('cardSubtitle').textContent = 'Área restrita para veterinários autorizados.';
+    }
+
+    function openConfirmMode(prefillEmail = '') {
+        if (prefillEmail) {
+            document.getElementById('confirmEmail').value = prefillEmail;
+        }
+        loginForm.classList.add('hidden');
+        confirmForm.classList.remove('hidden');
+        document.getElementById('cardTitle').textContent = 'Confirmar Cadastro';
+        document.getElementById('cardSubtitle').textContent = 'Valide seu e-mail para liberar o acesso ao sistema.';
+    }
+
+    // Girar card 3D para Cadastro de Veterinário
+    document.getElementById('flipToRegisterBtn').addEventListener('click', () => {
+        clearMessages();
+        flipCard.classList.add('flipped');
+    });
+
+    // Girar card 3D de volta para Login
+    document.getElementById('flipBackToLoginBtn').addEventListener('click', () => {
+        clearMessages();
+        openLoginMode();
+        flipCard.classList.remove('flipped');
+    });
+
+    // Alternar para tela de confirmação de senha
+    document.getElementById('goToConfirmBtn').addEventListener('click', () => {
+        clearMessages();
+        openConfirmMode(document.getElementById('email').value.trim());
+    });
+
+    // Voltar para tela de login
+    document.getElementById('backToLoginBtn').addEventListener('click', () => {
+        clearMessages();
+        openLoginMode();
+    });
+
+    // Máscara simples de CPF no cadastro
+    document.getElementById('regCpf').addEventListener('input', (e) => {
+        let v = e.target.value.replace(/\D/g, '').slice(0, 11);
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d)/, '$1.$2');
+        v = v.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+        e.target.value = v;
+    });
+
+    // Submeter Cadastro de Veterinário
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearMessages();
+
+        const btn = document.getElementById('registerBtn');
+        const email = document.getElementById('regEmail').value.trim();
+        const payload = {
+            nomeCompleto: document.getElementById('regNome').value.trim(),
+            cpf: document.getElementById('regCpf').value.replace(/\D/g, ''),
+            crmvNumero: document.getElementById('regCrmvNumero').value.trim(),
+            crmvUf: document.getElementById('regCrmvUf').value.trim().toUpperCase(),
+            email,
+            telefone: document.getElementById('regTelefone').value.trim() || null,
+            senha: document.getElementById('regSenha').value
+        };
+
+        btn.disabled = true;
+        btn.textContent = 'Cadastrando...';
+
+        try {
+            const response = await fetch(`${API_BASE}/api/veterinarios`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const raw = await response.text();
+            let data = null;
+            try { data = raw ? JSON.parse(raw) : null; } catch { data = null; }
+
+            if (!response.ok) {
+                const msg = data?.userMessage || data?.detail || data?.message || raw || 'Não foi possível concluir o cadastro.';
+                throw new Error(msg);
+            }
+
+            registerForm.reset();
+            openConfirmMode(email);
+            flipCard.classList.remove('flipped');
+            showMessage(msgBox, 'Veterinário cadastrado! Confirme seu e-mail abaixo para liberar o primeiro acesso.', 'success');
+        } catch (err) {
+            showMessage(registerMsgBox, err.message, 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Concluir cadastro';
+        }
+    });
+
+    // Submeter Login
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearMessages();
+
+        const email = document.getElementById('email').value.trim();
+        const senha = document.getElementById('senha').value;
+        const btn = document.getElementById('loginBtn');
+
+        btn.disabled = true;
+        btn.textContent = 'Autenticando...';
+
+        try {
+            const response = await fetch(`${API_BASE}/api/veterinarios/login`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, senha })
+            });
+
+            const raw = await response.text();
+            let data = null;
+            try { data = raw ? JSON.parse(raw) : null; } catch { data = null; }
+
+            if (!response.ok) {
+                const msg = data?.userMessage || data?.detail || data?.message || raw || 'E-mail ou senha inválidos.';
+                throw new Error(msg);
+            }
+
+            localStorage.setItem('vetcare_user', JSON.stringify(data || { email }));
+            window.location.replace('index.html');
+        } catch (err) {
+            showMessage(msgBox, err.message, 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Entrar no sistema';
+        }
+    });
+
+    // Submeter Confirmação de Senha
+    confirmForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearMessages();
+
+        const email = document.getElementById('confirmEmail').value.trim();
+        const btn = document.getElementById('confirmBtn');
+
+        btn.disabled = true;
+        btn.textContent = 'Confirmando...';
+
+        try {
+            const response = await fetch(`${API_BASE}/api/veterinarios/confirmar-senha/${encodeURIComponent(email)}`, {
+                method: 'PATCH'
+            });
+
+            const raw = await response.text();
+            let data = null;
+            try { data = raw ? JSON.parse(raw) : null; } catch { data = null; }
+
+            if (!response.ok) {
+                const msg = data?.userMessage || data?.detail || data?.message || raw || 'Não foi possível confirmar o cadastro.';
+                throw new Error(msg);
+            }
+
+            document.getElementById('email').value = email;
+            openLoginMode();
+            showMessage(msgBox, typeof data === 'string' ? data : (raw || 'Cadastro confirmado com sucesso! Digite sua senha para entrar.'), 'success');
+        } catch (err) {
+            showMessage(msgBox, err.message, 'error');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Confirmar cadastro';
+        }
+    });
+</script>
+</body>
+</html>
